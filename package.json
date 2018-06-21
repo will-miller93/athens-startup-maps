@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://will-miller93.github.io/athens-startup-maps",
   "dependencies": {
+    "google-map-react": "^1.0.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
