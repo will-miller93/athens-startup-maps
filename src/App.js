@@ -1,40 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import GoogleMapReact from 'google-map-react';
-import Navbar from './components/navbar/navbar';
+import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MapPage from './pages/mapPage/mapPage';
+import ComOrgDash from './pages/comOrgDash/comOrgDash';
+import StartUpDash from './pages/startUpdash/startUpDash';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class App extends Component {
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-  static defaultProps = {
-    center: {
-      lat: 33.948059,
-      lng: -83.377304
-    },
-    zoom: 13
-  };
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path='/' component={MapPage} />
+        <Route exact path='/communitydashboard' component={ComOrgDash} />
+        <Route exact path='/startupdashboard' component={StartUpDash} />
+      </Switch>
+    </Router>
+  )
 
-  render() {
-    return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
-        <Navbar />
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyD_AMMReRmbmb1mpMkc1jX1RWNG6xqu9Ao" }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={33.948059}
-            lng={-83.377304}
-            text={'Yo!'}
-          />
-        </GoogleMapReact>
-      </div>
-    );
-  }
 }
 
 export default App;
