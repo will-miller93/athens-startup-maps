@@ -8,3 +8,5 @@ export const Login = () => {
     )
 };
 // this may need to be stateful yet.
+// this will require functionality to redirect to the Auth0 login/signup page.
+// this will also need to redirect after a redirect.
